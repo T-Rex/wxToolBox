@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wxToolBoxSkin>
+  <Style StyleValue="0"/>
+  <BackgroundColour Red="112" Green="121" Blue="128"/>
+  <BorderHighlightColour Red="220" Green="225" Blue="228"/>
+  <BorderShadowColour Red="64" Green="64" Blue="64"/>
+  <Background Path="Glossy_BG.PNG"/>
+  <TabIcons Path="ItemIcons.png" ImageWidth="16" ImageHeight="16"/>
+  <ItemIcons Path="ItemIcons.png" ImageWidth="16" ImageHeight="16"/>
+  <Flags ItemsTransparent="1" SelectedItemTransparent="1" UseBackground="1" UseStdArrows="1" SelectNewTab="1" PreDrawBackgrounds="0" ShowSelectionAlways="0"/>
+  <Buttons>
+    <ButtonHoverColour Red="165" Green="177" Blue="186"/>
+    <ButtonNormalColour Red="197" Green="205" Blue="211"/>
+    <ButtonSelectedColour Red="79" Green="95" Blue="121"/>
+    <Flags UseButtonBackground="1"/>
+    <NormalBackground Left="Glossy_TabLeft_Normal.PNG" Middle="Glossy_TabMiddle_Normal.PNG" Right="Glossy_TabRight_Normal.PNG"/>
+    <HoverBackground Left="Glossy_TabLeft_Hover.PNG" Middle="Glossy_TabMiddle_Hover.PNG" Right="Glossy_TabRight_Hover.PNG"/>
+    <SelectedBackground Left="Glossy_TabLeft_Selected.PNG" Middle="Glossy_TabMiddle_Selected.PNG" Right="Glossy_TabRight_Selected.PNG"/>
+  </Buttons>
+  <Tabs>
+    <TabHoverColour Red="165" Green="177" Blue="186"/>
+    <TabNormalColour Red="197" Green="205" Blue="211"/>
+    <TabSelectedColour Red="79" Green="95" Blue="121"/>
+    <TabTextColour Red="0" Green="0" Blue="0"/>
+    <Flags UseTabBackground="1"/>
+    <Sizes TabHeight="20" TabSpacing="0" TabCaptionSpacing="2"/>
+    <NormalBackground Left="Glossy_TabLeft_Normal.PNG" Middle="Glossy_TabMiddle_Normal.PNG" Right="Glossy_TabRight_Normal.PNG"/>
+    <HoverBackground Left="Glossy_TabLeft_Hover.PNG" Middle="Glossy_TabMiddle_Hover.PNG" Right="Glossy_TabRight_Hover.PNG"/>
+    <SelectedBackground Left="Glossy_TabLeft_Selected.PNG" Middle="Glossy_TabMiddle_Selected.PNG" Right="Glossy_TabRight_Selected.PNG"/>
+    <TabNormalFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <TabHoverFont DefaultEncoding="-1" FaceName="Tahoma" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <TabSelectedFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+  </Tabs>
+  <Items>
+    <ItemHoverColour Red="79" Green="95" Blue="121"/>
+    <ItemNormalColour Red="35" Green="42" Blue="68"/>
+    <ItemSelectedColour Red="146" Green="151" Blue="164"/>
+    <ItemTextColour Red="255" Green="255" Blue="255"/>
+    <Flags UseItemNormalBackground="0" UseItemHoverBackground="1" UseItemSelectedBackground="0"/>
+    <Sizes ItemHeight="20" ItemSpacing="1" ItemCaptionSpacing="1"/>
+    <NormalBackground Left="" Middle="" Right=""/>
+    <HoverBackground Left="" Middle="" Right=""/>
+    <SelectedBackground Left="" Middle="" Right=""/>
+    <ItemNormalFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <ItemHoverFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <ItemSelectedFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+  </Items>
+</wxToolBoxSkin>

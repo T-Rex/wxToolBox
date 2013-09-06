@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wxToolBoxSkin>
+  <BackgroundColour Red="157" Green="21" Blue="24"/>
+  <BorderHighlightColour Red="212" Green="208" Blue="200"/>
+  <BorderShadowColour Red="64" Green="64" Blue="64"/>
+  <Background Path="gb.png"/>
+  <Flags ItemsTransparent="1" SelectedItemTransparent="0" UseBackground="1" UseStdArrows="1" SelectNewTab="1" PreDrawBackgrounds="1"/>
+  <Buttons>
+    <ButtonHoverColour Red="140" Green="20" Blue="20"/>
+    <ButtonNormalColour Red="110" Green="20" Blue="20"/>
+    <ButtonSelectedColour Red="200" Green="20" Blue="20"/>
+    <Flags UseButtonBackground="1"/>
+    <NormalBackground Left="PerfectGarden_Left.PNG" Middle="PerfectGarden_Middle.PNG" Right="PerfectGarden_Right.PNG"/>
+    <HoverBackground Left="PerfectGarden_Left_Hover.PNG" Middle="PerfectGarden_Middle_Hover.PNG" Right="PerfectGarden_Right_Hover.PNG"/>
+    <SelectedBackground Left="PerfectGarden_Left_Selected.PNG" Middle="PerfectGarden_Middle_Selected.PNG" Right="PerfectGarden_Right_Selected.PNG"/>
+  </Buttons>
+  <Tabs>
+    <TabHoverColour Red="140" Green="20" Blue="20"/>
+    <TabNormalColour Red="110" Green="20" Blue="20"/>
+    <TabSelectedColour Red="200" Green="20" Blue="20"/>
+    <TabTextColour Red="255" Green="255" Blue="255"/>
+    <Flags UseTabBackground="1"/>
+    <Sizes TabHeight="25" TabSpacing="1"/>
+    <NormalBackground Left="PerfectGarden_Left.PNG" Middle="PerfectGarden_Middle_Tab.PNG" Right="PerfectGarden_Right.PNG"/>
+    <HoverBackground Left="PerfectGarden_Left_Hover.PNG" Middle="PerfectGarden_Middle_Tab_Hover.PNG" Right="PerfectGarden_Right_Hover.PNG"/>
+    <SelectedBackground Left="PerfectGarden_Left_Selected.PNG" Middle="PerfectGarden_Middle_Tab_Selected.PNG" Right="PerfectGarden_Right_Selected.PNG"/>
+    <TabNormalFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <TabHoverFont DefaultEncoding="-1" FaceName="Tahoma" Family="74" PointSize="8" Style="90" Underlined="0" Weight="92"/>
+    <TabSelectedFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+  </Tabs>
+  <Items>
+    <ItemHoverColour Red="210" Green="30" Blue="30"/>
+    <ItemNormalColour Red="157" Green="21" Blue="24"/>
+    <ItemSelectedColour Red="104" Green="7" Blue="8"/>
+    <ItemTextColour Red="255" Green="255" Blue="255"/>
+    <Flags UseItemBackground="1"/>
+    <Sizes ItemHeight="26" ItemSpacing="1"/>
+    <NormalBackground Left="PerfectGarden_Left.PNG" Middle="PerfectGarden_Middle.PNG" Right="PerfectGarden_Right.PNG"/>
+    <HoverBackground Left="PerfectGarden_Left_Hover.PNG" Middle="PerfectGarden_Middle_Hover.PNG" Right="PerfectGarden_Right_Hover.PNG"/>
+    <SelectedBackground Left="PerfectGarden_Left_Selected.PNG" Middle="PerfectGarden_Middle_Selected.PNG" Right="PerfectGarden_Right_Selected.PNG"/>
+    <ItemNormalFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <ItemHoverFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <ItemSelectedFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+  </Items>
+</wxToolBoxSkin>

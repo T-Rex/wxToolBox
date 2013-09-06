@@ -1,0 +1,96 @@
+[Project]
+name=libwxToolBox
+type=3
+defaultConfig=1
+
+
+[Debug]
+// compiler 
+workingDirectory=
+arguments=
+intermediateFilesDirectory=Debug
+outputFilesDirectory=Debug
+compilerPreprocessor=
+extraCompilerOptions=`wx-config --cxxflags` -I./ -I../../include
+compilerIncludeDirectory=
+noWarning=0
+defaultWarning=0
+allWarning=1
+extraWarning=0
+isoWarning=0
+warningsAsErrors=0
+debugType=1
+debugLevel=2
+exceptionEnabled=1
+runtimeTypeEnabled=1
+optimizeLevel=0
+
+// linker
+libraryPath=
+outputFilename=../../lib/libwxPieCtrl.a
+libraries=
+extraLinkerOptions=
+ignoreStartupFile=1
+ignoreDefaultLibs=1
+stripExecutableFile=1
+
+// archive
+extraArchiveOptions=
+
+//resource
+resourcePreprocessor=
+resourceIncludeDirectory=
+extraResourceOptions=
+
+[Release]
+// compiler 
+workingDirectory=
+arguments=
+intermediateFilesDirectory=Release
+outputFilesDirectory=Release
+compilerPreprocessor=
+extraCompilerOptions=`wx-config --cxxflags` -I./ -I./include
+compilerIncludeDirectory=
+noWarning=0
+defaultWarning=0
+allWarning=1
+extraWarning=0
+isoWarning=0
+warningsAsErrors=0
+debugType=0
+debugLevel=1
+exceptionEnabled=1
+runtimeTypeEnabled=1
+optimizeLevel=2
+
+// linker
+libraryPath=
+outputFilename=libwxToolBox.a
+libraries=
+extraLinkerOptions=
+ignoreStartupFile=40
+ignoreDefaultLibs=64
+stripExecutableFile=246
+
+// archive
+extraArchiveOptions=
+
+//resource
+resourcePreprocessor=
+resourceIncludeDirectory=
+extraResourceOptions=
+
+[Source]
+1=wxToolBox.cpp
+2=wxToolBoxEvent.cpp
+3=wxToolBoxItem.cpp
+4=wxToolBoxScrollButton.cpp
+5=wxToolBoxTab.cpp
+6=wxToolItemEditorTextCtrl.cpp
+7=wxToolObject.cpp
+8=wxToolObjectBackground.cpp
+[Header]
+1=include/wx/wxToolBox/wxToolBox.h
+[Resource]
+[Other]
+[History]

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wxToolBoxSkin>
+  <Style StyleValue="0"/>
+  <BackgroundColour Red="212" Green="208" Blue="200"/>
+  <BorderHighlightColour Red="255" Green="255" Blue="255"/>
+  <BorderShadowColour Red="128" Green="128" Blue="128"/>
+  <Background Path=""/>
+  <TabIcons Path="TabIcons.png" ImageWidth="16" ImageHeight="16"/>
+  <ItemIcons Path="ItemIcons.png" ImageWidth="16" ImageHeight="16"/>
+  <Flags ItemsTransparent="0" SelectedItemTransparent="0" UseBackground="0" UseStdArrows="0" SelectNewTab="1" PreDrawBackgrounds="0" ShowSelectionAlways="1"/>
+  <Buttons>
+    <ButtonHoverColour Red="212" Green="208" Blue="200"/>
+    <ButtonNormalColour Red="212" Green="208" Blue="200"/>
+    <ButtonSelectedColour Red="212" Green="208" Blue="200"/>
+    <Flags UseButtonBackground="0"/>
+    <NormalBackground Left="" Middle="" Right=""/>
+    <HoverBackground Left="" Middle="" Right=""/>
+    <SelectedBackground Left="" Middle="" Right=""/>
+  </Buttons>
+  <Tabs>
+    <TabHoverColour Red="212" Green="208" Blue="200"/>
+    <TabNormalColour Red="212" Green="208" Blue="200"/>
+    <TabSelectedColour Red="212" Green="208" Blue="200"/>
+    <TabTextColour Red="0" Green="0" Blue="0"/>
+    <Flags UseTabBackground="0"/>
+    <Sizes TabHeight="22" TabSpacing="1" TabCaptionSpacing="2"/>
+    <NormalBackground Left="" Middle="" Right=""/>
+    <HoverBackground Left="" Middle="" Right=""/>
+    <SelectedBackground Left="" Middle="" Right=""/>
+    <TabNormalFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <TabHoverFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="92"/>
+    <TabSelectedFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+  </Tabs>
+  <Items>
+    <ItemHoverColour Red="212" Green="208" Blue="200"/>
+    <ItemNormalColour Red="212" Green="208" Blue="200"/>
+    <ItemSelectedColour Red="233" Green="229" Blue="221"/>
+    <ItemTextColour Red="0" Green="0" Blue="0"/>
+    <Flags UseItemNormalBackground="0" UseItemHoverBackground="0" UseItemSelectedBackground="0"/>
+    <Sizes ItemHeight="22" ItemSpacing="1" ItemCaptionSpacing="1"/>
+    <NormalBackground Left="" Middle="" Right=""/>
+    <HoverBackground Left="" Middle="" Right=""/>
+    <SelectedBackground Left="" Middle="" Right=""/>
+    <ItemNormalFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <ItemHoverFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+    <ItemSelectedFont DefaultEncoding="-1" FaceName="MS Shell Dlg 2" Family="74" PointSize="8" Style="90" Underlined="0" Weight="90"/>
+  </Items>
+</wxToolBoxSkin>
