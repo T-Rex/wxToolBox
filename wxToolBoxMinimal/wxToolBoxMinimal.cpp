@@ -7,6 +7,10 @@
 #include <aygshell.h>
 #endif
 
+#if defined(__WXMSW__) && !defined(__WXWINCE__)
+#define SUPPORTS_TAB_CHILD_CONTROLS
+#endif
+
 class wxToolBoxMinimalTestApp : public wxApp
 {
 public:
@@ -24,16 +28,18 @@ class wxToolBoxMinimalTestFrame : public wxFrame
 public:
 	wxToolBoxMinimalTestFrame();
 	~wxToolBoxMinimalTestFrame();
-	bool Create(wxWindow * parent, wxWindowID id = wxID_ANY,
-		const wxString & title = wxEmptyString);
+	//bool Create(wxWindow * parent, wxWindowID id = wxID_ANY,
+	//	const wxString & title = wxEmptyString);
 	void CreateToolBox();
 	void OnGaugeTimer(wxTimerEvent & event);
 	void OnSubmit(wxCommandEvent & event);
 };
 
 wxToolBoxMinimalTestFrame::wxToolBoxMinimalTestFrame()
+ : wxFrame(NULL, wxID_ANY, _("wxToolBox Minimal"))
 {
-	Create(NULL, -1, _("wxToolBox Minimal"));
+	//Create(NULL, -1, _("wxToolBox Minimal"));
+	SetBackgroundColour(*wxRED);
 }
 
 wxToolBoxMinimalTestFrame::~wxToolBoxMinimalTestFrame()
@@ -44,12 +50,10 @@ wxToolBoxMinimalTestFrame::~wxToolBoxMinimalTestFrame()
 #endif
 }
 
-bool wxToolBoxMinimalTestFrame::Create(wxWindow * parent,
+/*bool wxToolBoxMinimalTestFrame::Create(wxWindow * parent,
 		wxWindowID id, const wxString & title)
 {
-#if defined(__WGTK__)
     wxMessageBox(_("Attach to process"));
-#endif
 	bool res = wxFrame::Create(parent, id, title, wxDefaultPosition, wxSize(220, 500), wxDEFAULT_FRAME_STYLE | wxCAPTION);
 	if(res)
 	{
@@ -61,7 +65,7 @@ bool wxToolBoxMinimalTestFrame::Create(wxWindow * parent,
 	}
 	return res;
 }
-
+*/
 void wxToolBoxMinimalTestFrame::OnGaugeTimer(wxTimerEvent & event)
 {
 	if(m_tab4gauge->GetValue() >= 100)
@@ -118,17 +122,18 @@ void wxToolBoxMinimalTestFrame::CreateToolBox()
 	icon = -1;
 #endif;
 	wxToolBoxTab * tab2 = new wxToolBoxTab(wxT("Tab 2"));
-#if !defined(__WXWINCE__)
+#if defined(SUPPORTS_TAB_CHILD_CONTROLS)
 	wxToolBoxTab * tab3 = new wxToolBoxTab(wxT("Tab 3"));
 #endif
-#if !defined(__WXWINCE__)
+#if defined(SUPPORTS_TAB_CHILD_CONTROLS)
 	icon = rand()%m_ToolBox->GetTabImageList().Count();
 #else
 	icon = -1;
 #endif;
 
-#if !defined(__WXWINCE__)
+#if defined(SUPPORTS_TAB_CHILD_CONTROLS)
 	tab3->SetImageIndex(icon);
+
 	wxNotebook * notebook = new wxNotebook(m_ToolBox, wxID_ANY,
 		wxDefaultPosition, wxDefaultSize, wxNO_BORDER);
 	notebook->SetBackgroundColour(m_ToolBox->GetBackgroundColour());
@@ -147,10 +152,11 @@ void wxToolBoxMinimalTestFrame::CreateToolBox()
 
 	m_ToolBox->AddTab(tab1);
 	m_ToolBox->AddTab(tab2);
-#if !defined(__WXWINCE__)
+#if defined(SUPPORTS_TAB_CHILD_CONTROLS)
 	m_ToolBox->AddTab(tab3);
 #endif
 	m_ToolBox->SetStyle(wxTB_STYLE_LIST);
+	
 	wxToolBoxItem item1;
 
 	for(int i = 0; i < 60; i++)
@@ -175,11 +181,11 @@ void wxToolBoxMinimalTestFrame::CreateToolBox()
 			tab2->AddItem(item1);
 		}
 	}
-#if defined(__WXWINCE__)
+#if !defined(SUPPORTS_TAB_CHILD_CONTROLS)
 	return;
 #endif
 	wxToolBoxTab * tab4 = new wxToolBoxTab(wxT("Tab 4"));
-#if !defined(__WXWINCE__)
+#if defined(SUPPORTS_TAB_CHILD_CONTROLS)
 	icon = rand()%m_ToolBox->GetTabImageList().Count();
 #else
 	icon = -1;
