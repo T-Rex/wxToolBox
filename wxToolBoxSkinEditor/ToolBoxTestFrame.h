@@ -1,7 +1,6 @@
 #ifndef _TOOLBOX_TEST_FRAME_H
 #define _TOOLBOX_TEST_FRAME_H
 
-#include "wxToolBoxSkinEditorHeaders.h"
 #include "wx/wxToolBox/wxToolBox.h"
 
 class ToolBoxTestFrame : public wxFrame

@@ -1,7 +1,6 @@
 #ifndef _TOOLBOX_HOST_FRAME_H
 #define _TOOLBOX_HOST_FRAME_H
 
-#include "wxToolBoxSkinEditorHeaders.h"
 #include "wx/wxToolBox/wxToolBox.h"
 
 

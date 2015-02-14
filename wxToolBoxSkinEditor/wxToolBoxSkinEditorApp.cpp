@@ -1,3 +1,4 @@
+#include "stdwx.h"
 #include "wxToolBoxSkinEditorApp.h"
 #include "ToolBoxTestFrame.h"
 #include "AdditionalProperties.h"

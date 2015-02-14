@@ -1,20 +1,6 @@
 #ifndef _ADDITIONAL_PROPERTIES_H
 #define _ADDITIONAL_PROPERTIES_H
 
-#include <wx/wx.h>
-
-// Main propertygrid header.
-#include <wx/propgrid/propgrid.h>
-// Needed for implementing custom properties.
-#include <wx/propgrid/property.h>
-#include <wx/propgrid/propgriddefs.h>
-#include <wx/propgrid/propgridiface.h>
-#include <wx/propgrid/props.h>
-// Extra property classes.
-#include <wx/propgrid/advprops.h>
-// This defines wxPropertyGridManager.
-#include <wx/propgrid/manager.h>
-
 // ------------------------------------------------------------------------
 //WX_PG_DECLARE_PROPERTY(wxAdvImageFileProperty,const wxString&,wxEmptyString)
 

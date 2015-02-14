@@ -1,6 +1,5 @@
+#include "stdwx.h"
 #include "ToolBoxTestFrame.h"
-#include <wx/treectrl.h>
-#include <wx/valgen.h>
 
 #include "AdditionalProperties.h"
 

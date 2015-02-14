@@ -1,3 +1,4 @@
+#include "stdwx.h"
 #include "AdditionalProperties.h"
 
 bool operator == (const wxToolObjectBackgroundInfo & a, const wxToolObjectBackgroundInfo & b)

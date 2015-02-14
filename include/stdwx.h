@@ -32,22 +32,34 @@
 #include <wx/timer.h>
 #include <wx/image.h>
 #include <wx/frame.h>
+#include <wx/sizer.h>
 #include <wx/bitmap.h>
 #include <wx/dialog.h>
 #include <wx/string.h>
 #include <wx/tipwin.h>
+#include <wx/valgen.h>
+#include <wx/gbsizer.h>
 #include <wx/tooltip.h>
 #include <wx/listbox.h>
 #include <wx/listctrl.h>
 #include <wx/textctrl.h>
 #include <wx/treectrl.h>
+#include <wx/spinctrl.h>
 #include <wx/notebook.h>
 #include <wx/dynarray.h>
 #include <wx/settings.h>
 #include <wx/dcbuffer.h>
 #include <wx/filename.h>
 
+#include <wx/aui/aui.h>
 #include <wx/xml/xml.h>
+#include <wx/propgrid/propgrid.h>
+#include <wx/propgrid/property.h>
+#include <wx/propgrid/propgriddefs.h>
+#include <wx/propgrid/propgridiface.h>
+#include <wx/propgrid/props.h>
+#include <wx/propgrid/advprops.h>
+#include <wx/propgrid/manager.h>
 
 // APPLICATION INCLUDES
 #endif
