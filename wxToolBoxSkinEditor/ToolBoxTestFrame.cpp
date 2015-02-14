@@ -433,12 +433,15 @@ void ToolBoxTestFrame::CreateProperties()
 	m_PropGrid->Append(new wxBoolProperty(wxT("PreDrawBackgrounds"), wxPG_LABEL, m_ToolBox->GetPreDrawBackgrounds()));
 	m_PropGrid->Append(new wxBoolProperty(wxT("SelectNewTab"), wxPG_LABEL, m_ToolBox->GetSelectNewTab()));
 	m_PropGrid->Append(new wxBoolProperty(wxT("ShowSelectionAlways"), wxPG_LABEL, m_ToolBox->GetShowSelectionAlways()));
-	m_PropGrid->Append(new wxColourProperty(wxT("BackgroundColour"), wxPG_LABEL,
-		m_ToolBox->GetBackgroundColour()));
-	m_PropGrid->Append(new wxColourProperty(wxT("BorderHighlightColour"), wxPG_LABEL,
-		m_ToolBox->GetBorderHighlightColour()));
-	m_PropGrid->Append(new wxColourProperty(wxT("BorderShadowColour"), wxPG_LABEL,
-		m_ToolBox->GetBorderShadowColour()));
+
+	wxColour colorValue;
+
+	colorValue = m_ToolBox->GetBackgroundColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("BackgroundColour"), wxPG_LABEL, colorValue));
+	colorValue = m_ToolBox->GetBorderHighlightColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("BorderHighlightColour"), wxPG_LABEL, colorValue));
+	colorValue = m_ToolBox->GetBorderShadowColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("BorderShadowColour"), wxPG_LABEL, colorValue));
 	
 	m_PropGrid->Append(new wxImageFileProperty(wxT("Background")));
 	
@@ -448,19 +451,19 @@ void ToolBoxTestFrame::CreateProperties()
 	m_PropGrid->Append(new wxFontProperty(wxT("ItemNormalFont"), wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("ItemHoverFont"), wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("ItemSelectedFont"), wxPG_LABEL));
-	m_PropGrid->Append(new wxColourProperty(wxT("ItemTextColour"), wxPG_LABEL,
-		m_ToolBox->GetItemTextColour()));
+	colorValue = m_ToolBox->GetItemTextColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("ItemTextColour"), wxPG_LABEL, colorValue));
 
 	m_PropGrid->Append(new wxIntProperty(wxT("ItemHeight"), wxPG_LABEL, m_ToolBox->GetItemHeight()));
 	m_PropGrid->Append(new wxIntProperty(wxT("ItemSpacing"), wxPG_LABEL, m_ToolBox->GetItemSpacing()));
 	m_PropGrid->Append(new wxIntProperty(wxT("ItemCaptionSpacing"), wxPG_LABEL, m_ToolBox->GetItemCaptionSpacing()));
 
-	m_PropGrid->Append(new wxColourProperty(wxT("ItemNormalColour"), wxPG_LABEL,
-		m_ToolBox->GetItemNormalColour()));	
-	m_PropGrid->Append(new wxColourProperty(wxT("ItemHoverColour"), wxPG_LABEL,
-		m_ToolBox->GetItemHoverColour()));	
-	m_PropGrid->Append(new wxColourProperty(wxT("ItemSelectedColour"), wxPG_LABEL,
-		m_ToolBox->GetItemSelectedColour()));	
+	colorValue = m_ToolBox->GetItemNormalColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("ItemNormalColour"), wxPG_LABEL, colorValue));	
+	colorValue = m_ToolBox->GetItemHoverColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("ItemHoverColour"), wxPG_LABEL, colorValue));
+	colorValue = m_ToolBox->GetItemSelectedColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("ItemSelectedColour"), wxPG_LABEL, colorValue));	
 
 	m_PropGrid->Append(new wxBoolProperty(wxT("UseItemNormalBackground"), wxPG_LABEL, m_ToolBox->GetUseItemNormalBackground()));
 	m_PropGrid->Append(new wxBoolProperty(wxT("UseItemHoverBackground"), wxPG_LABEL, m_ToolBox->GetUseItemHoverBackground()));
@@ -472,31 +475,31 @@ void ToolBoxTestFrame::CreateProperties()
 	m_PropGrid->Append(new wxFontProperty(wxT("TabNormalFont"), wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("TabHoverFont"), wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("TabSelectedFont"), wxPG_LABEL));
-	m_PropGrid->Append(new wxColourProperty(wxT("TabTextColour"), wxPG_LABEL,
-		m_ToolBox->GetTabTextColour()));
+	colorValue = m_ToolBox->GetTabTextColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("TabTextColour"), wxPG_LABEL, colorValue));
 
 	m_PropGrid->Append(new wxIntProperty(wxT("TabHeight"), wxPG_LABEL, m_ToolBox->GetTabHeight()));
 	m_PropGrid->Append(new wxIntProperty(wxT("TabSpacing"), wxPG_LABEL, m_ToolBox->GetTabSpacing()));
 	m_PropGrid->Append(new wxIntProperty(wxT("TabCaptionSpacing"), wxPG_LABEL, m_ToolBox->GetTabCaptionSpacing()));
 
-	m_PropGrid->Append(new wxColourProperty(wxT("TabNormalColour"), wxPG_LABEL,
-		m_ToolBox->GetTabNormalColour()));	
-	m_PropGrid->Append(new wxColourProperty(wxT("TabHoverColour"), wxPG_LABEL,
-		m_ToolBox->GetTabHoverColour()));	
-	m_PropGrid->Append(new wxColourProperty(wxT("TabSelectedColour"), wxPG_LABEL,
-		m_ToolBox->GetTabSelectedColour()));	
+	colorValue = m_ToolBox->GetTabNormalColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("TabNormalColour"), wxPG_LABEL, colorValue));	
+	colorValue = m_ToolBox->GetTabHoverColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("TabHoverColour"), wxPG_LABEL, colorValue));
+	colorValue = m_ToolBox->GetTabSelectedColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("TabSelectedColour"), wxPG_LABEL, colorValue));	
 
 	m_PropGrid->Append(new wxBoolProperty(wxT("UseTabBackground"), wxPG_LABEL, m_ToolBox->GetUseTabBackground()));
 
 	m_PropGrid->Append(new wxPropertyCategory(wxT("Buttons"), wxPG_LABEL));
 
 	//m_PropGrid->Append(wxToolObjectBackgroundInfoProperty(wxT("Button Background"),wxPG_LABEL));
-	m_PropGrid->Append(new wxColourProperty(wxT("ButtonNormalColour"), wxPG_LABEL,
-		m_ToolBox->GetButtonNormalColour()));	
-	m_PropGrid->Append(new wxColourProperty(wxT("ButtonHoverColour"), wxPG_LABEL,
-		m_ToolBox->GetButtonHoverColour()));	
-	m_PropGrid->Append(new wxColourProperty(wxT("ButtonSelectedColour"), wxPG_LABEL,
-		m_ToolBox->GetButtonSelectedColour()));	
+	colorValue = m_ToolBox->GetButtonNormalColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("ButtonNormalColour"), wxPG_LABEL, colorValue));	
+	colorValue = m_ToolBox->GetButtonHoverColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("ButtonHoverColour"), wxPG_LABEL, colorValue));
+	colorValue = m_ToolBox->GetButtonSelectedColour();
+	m_PropGrid->Append(new wxColourProperty(wxT("ButtonSelectedColour"), wxPG_LABEL, colorValue));	
 
 	m_PropGrid->Append(new wxBoolProperty(wxT("UseButtonBackground"), wxPG_LABEL, m_ToolBox->GetUseButtonBackground()));
 }
