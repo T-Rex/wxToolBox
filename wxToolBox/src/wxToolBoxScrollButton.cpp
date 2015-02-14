@@ -1,3 +1,4 @@
+#include "stdwx.h"
 #include "wx/wxToolBox/wxToolBox.h"
 
 char *ArrowUp_xpm[] = {
