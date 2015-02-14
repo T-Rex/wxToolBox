@@ -1,3 +1,4 @@
+#include "stdwx.h"
 #include "wxToolBoxSampleIDEMainFrame.h"
 #include <wx/wxFlatNotebook/renderer.h>
 

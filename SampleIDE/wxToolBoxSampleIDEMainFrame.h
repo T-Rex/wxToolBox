@@ -1,8 +1,6 @@
 #ifndef _WX_TOOLBOX_SAMPLE_IDE_MAINFRAME_H
 #define _WX_TOOLBOX_SAMPLE_IDE_MAINFRAME_H
 
-#include "wxToolBoxSampleIDEHeaders.h"
-
 class wxToolBoxSampleIDEMainFrame : public wxFrame
 {
 	wxAuiManager m_FrameManager;

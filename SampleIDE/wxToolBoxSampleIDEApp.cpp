@@ -1,3 +1,4 @@
+#include "stdwx.h"
 #include "wxToolBoxSampleIDEApp.h"
 #include "wxToolBoxSampleIDEMainFrame.h"
 
