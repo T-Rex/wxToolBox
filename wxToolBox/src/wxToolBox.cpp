@@ -2156,8 +2156,8 @@ void wxToolBox::DrawBG(wxDC & dc, wxBitmap * left_bmp, wxBitmap * middle_bmp, wx
 		int left, int top)
 {
 	int lw, rw, i;
-	lw = left_bmp->GetWidth();
-	rw = right_bmp->GetWidth();
+	lw = left_bmp->IsOk() ? left_bmp->GetWidth() : 0;
+	rw = right_bmp->IsOk() ? right_bmp->GetWidth() : 0;
 	if(left_bmp->Ok()) dc.DrawBitmap(*left_bmp, left, top, true);
 	if(middle_bmp->Ok())
 	{		

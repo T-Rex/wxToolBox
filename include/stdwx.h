@@ -29,6 +29,7 @@
 #include <wx/dc.h>
 #include <wx/log.h>
 #include <wx/dnd.h>
+#include <wx/filefn.h> 
 #include <wx/timer.h>
 #include <wx/image.h>
 #include <wx/frame.h>

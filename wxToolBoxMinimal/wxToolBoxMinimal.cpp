@@ -47,6 +47,9 @@ wxToolBoxMinimalTestFrame::~wxToolBoxMinimalTestFrame()
 bool wxToolBoxMinimalTestFrame::Create(wxWindow * parent,
 		wxWindowID id, const wxString & title)
 {
+#if defined(__WGTK__)
+    wxMessageBox(_("Attach to process"));
+#endif
 	bool res = wxFrame::Create(parent, id, title, wxDefaultPosition, wxSize(220, 500), wxDEFAULT_FRAME_STYLE | wxCAPTION);
 	if(res)
 	{
@@ -95,6 +98,7 @@ void wxToolBoxMinimalTestFrame::CreateToolBox()
 	Centre();
 //#if !defined(__WXWINCE__)
 	wxSetWorkingDirectory(wxPathOnly(wxGetApp().argv[0]));
+	wxLogDebug(wxString::Format(wxT("Working directory: %s"), wxGetCwd().c_str()));
 	m_ToolBox->LoadSkin(wxPathOnly(wxGetApp().argv[0])+ wxFILE_SEP_PATH + wxT("Standard.xml"));
 //#endif
 	wxFont font = m_ToolBox->GetFont();
@@ -125,7 +129,7 @@ void wxToolBoxMinimalTestFrame::CreateToolBox()
 
 #if !defined(__WXWINCE__)
 	tab3->SetImageIndex(icon);
-	wxNotebook * notebook = new wxNotebook(m_ToolBox, wxID_ANY, 
+	wxNotebook * notebook = new wxNotebook(m_ToolBox, wxID_ANY,
 		wxDefaultPosition, wxDefaultSize, wxNO_BORDER);
 	notebook->SetBackgroundColour(m_ToolBox->GetBackgroundColour());
 	wxTextCtrl * textCtrl = new wxTextCtrl(notebook, wxID_ANY, wxEmptyString,
