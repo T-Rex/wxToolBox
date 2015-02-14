@@ -509,6 +509,7 @@ void ToolBoxTestFrame::SynchronizeProperties()
 	wxToolObjectBackgroundInfo bg;
 	//wxToolObjectBackgroundInfoPropertyClass * prop(NULL);
 
+	wxColour colorValue;
 	m_PropGrid->SetPropertyValue(wxT("Style"), (int)m_ToolBox->GetStyle());
 	m_PropGrid->SetPropertyValue(wxT("Background"), m_ToolBox->GetBackgroundPath());
 	m_PropGrid->SetPropertyValue(wxT("UseBackground"), m_ToolBox->GetUseBackground());
@@ -523,9 +524,12 @@ void ToolBoxTestFrame::SynchronizeProperties()
 	m_PropGrid->SetPropertyValue(wxT("PreDrawBackgrounds"), m_ToolBox->GetPreDrawBackgrounds());
 	m_PropGrid->SetPropertyValue(wxT("ItemsTransparent"), m_ToolBox->GetItemsTransparent());
 	m_PropGrid->SetPropertyValue(wxT("SelectedItemTransparent"), m_ToolBox->GetSelectedItemTransparent());
-	m_PropGrid->SetPropertyValue(wxT("BackgroundColour"), m_ToolBox->GetBackgroundColour());
-	m_PropGrid->SetPropertyValue(wxT("BorderHighlightColour"), m_ToolBox->GetBorderHighlightColour());
-	m_PropGrid->SetPropertyValue(wxT("BorderShadowColour"), m_ToolBox->GetBorderShadowColour());
+	colorValue = m_ToolBox->GetBackgroundColour();
+	m_PropGrid->SetPropertyValue(wxT("BackgroundColour"), colorValue);
+	colorValue = m_ToolBox->GetBorderHighlightColour();
+	m_PropGrid->SetPropertyValue(wxT("BorderHighlightColour"), colorValue);
+	colorValue = m_ToolBox->GetBorderShadowColour();
+	m_PropGrid->SetPropertyValue(wxT("BorderShadowColour"), colorValue);
 	
 	bg.SetFileNames(		
 			m_ToolBox->GetTabBackground().GetNormalBackground().GetLeftPath(),
@@ -542,7 +546,6 @@ void ToolBoxTestFrame::SynchronizeProperties()
 	prop = (wxToolObjectBackgroundInfoPropertyClass *)id.GetPropertyPtr();
 	if(prop) prop->DoSetValue((void*)&bg);*/
 	
-	wxColour colorValue;
 	wxFont fontValue;
 	colorValue = m_ToolBox->GetTabNormalColour();
 	m_PropGrid->SetPropertyValue(wxT("TabNormalColour"), colorValue);
