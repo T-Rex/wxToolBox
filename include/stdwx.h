@@ -38,6 +38,7 @@
 #include <wx/string.h>
 #include <wx/tipwin.h>
 #include <wx/valgen.h>
+#include <wx/artprov.h>
 #include <wx/gbsizer.h>
 #include <wx/tooltip.h>
 #include <wx/listbox.h>
@@ -46,6 +47,7 @@
 #include <wx/treectrl.h>
 #include <wx/spinctrl.h>
 #include <wx/notebook.h>
+#include <wx/imaglist.h>
 #include <wx/dynarray.h>
 #include <wx/settings.h>
 #include <wx/dcbuffer.h>
