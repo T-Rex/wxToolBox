@@ -447,7 +447,7 @@ void ToolBoxTestFrame::CreateProperties()
 	
 	m_PropGrid->Append(new wxPropertyCategory(wxT("Items"), wxPG_LABEL));
 
-	//m_PropGrid->Append(wxToolObjectBackgroundInfoProperty(wxT("Item Background"),wxPG_LABEL));
+	m_PropGrid->Append(new wxToolObjectBackgroundInfoProperty(wxT("Item Background"),wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("ItemNormalFont"), wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("ItemHoverFont"), wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("ItemSelectedFont"), wxPG_LABEL));
@@ -471,7 +471,7 @@ void ToolBoxTestFrame::CreateProperties()
 
 	m_PropGrid->Append(new wxPropertyCategory(wxT("Tabs"), wxPG_LABEL));
 
-	//m_PropGrid->Append(wxToolObjectBackgroundInfoProperty(wxT("Tab Background"),wxPG_LABEL));
+	m_PropGrid->Append(new wxToolObjectBackgroundInfoProperty(wxT("Tab Background"),wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("TabNormalFont"), wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("TabHoverFont"), wxPG_LABEL));
 	m_PropGrid->Append(new wxFontProperty(wxT("TabSelectedFont"), wxPG_LABEL));
@@ -493,7 +493,7 @@ void ToolBoxTestFrame::CreateProperties()
 
 	m_PropGrid->Append(new wxPropertyCategory(wxT("Buttons"), wxPG_LABEL));
 
-	//m_PropGrid->Append(wxToolObjectBackgroundInfoProperty(wxT("Button Background"),wxPG_LABEL));
+	m_PropGrid->Append(new wxToolObjectBackgroundInfoProperty(wxT("Button Background"),wxPG_LABEL));
 	colorValue = m_ToolBox->GetButtonNormalColour();
 	m_PropGrid->Append(new wxColourProperty(wxT("ButtonNormalColour"), wxPG_LABEL, colorValue));	
 	colorValue = m_ToolBox->GetButtonHoverColour();
@@ -506,8 +506,9 @@ void ToolBoxTestFrame::CreateProperties()
 
 void ToolBoxTestFrame::SynchronizeProperties()
 {
+	wxVariant bgVariant;
 	wxToolObjectBackgroundInfo bg;
-	//wxToolObjectBackgroundInfoPropertyClass * prop(NULL);
+	wxToolObjectBackgroundInfoProperty * prop(NULL);
 
 	wxColour colorValue;
 	m_PropGrid->SetPropertyValue(wxT("Style"), (int)m_ToolBox->GetStyle());
@@ -542,11 +543,12 @@ void ToolBoxTestFrame::SynchronizeProperties()
 			m_ToolBox->GetTabBackground().GetSelectedBackground().GetMiddlePath(),
 			m_ToolBox->GetTabBackground().GetSelectedBackground().GetRightPath()
 					);		
-	/*id = m_PropGrid->GetPropertyByLabel(wxT("Tab Background"));
-	prop = (wxToolObjectBackgroundInfoPropertyClass *)id.GetPropertyPtr();
-	if(prop) prop->DoSetValue((void*)&bg);*/
+	prop = (wxToolObjectBackgroundInfoProperty *)m_PropGrid->GetPropertyByLabel(wxT("Tab Background"));
+	bgVariant << bg;
+	if(prop) prop->SetValue(bgVariant);
 	
-	wxFont fontValue;
+	wxVariant fontValue;
+	
 	colorValue = m_ToolBox->GetTabNormalColour();
 	m_PropGrid->SetPropertyValue(wxT("TabNormalColour"), colorValue);
 	colorValue = m_ToolBox->GetTabHoverColour();
@@ -555,11 +557,11 @@ void ToolBoxTestFrame::SynchronizeProperties()
 	m_PropGrid->SetPropertyValue(wxT("TabSelectedColour"), colorValue);
 	colorValue = m_ToolBox->GetTabTextColour();
 	m_PropGrid->SetPropertyValue(wxT("TabTextColour"), colorValue);
-	fontValue = m_ToolBox->GetTabHoverFont();
+	fontValue << m_ToolBox->GetTabHoverFont();
 	m_PropGrid->SetPropertyValue(wxT("TabNormalFont"), fontValue);
-	fontValue = m_ToolBox->GetTabHoverFont();
+	fontValue << m_ToolBox->GetTabHoverFont();
 	m_PropGrid->SetPropertyValue(wxT("TabHoverFont"), fontValue);
-	fontValue = m_ToolBox->GetTabSelectedFont();
+	fontValue << m_ToolBox->GetTabSelectedFont();
 	m_PropGrid->SetPropertyValue(wxT("TabSelectedFont"), fontValue);
 	
 	bg.SetFileNames(		
@@ -573,9 +575,10 @@ void ToolBoxTestFrame::SynchronizeProperties()
 			m_ToolBox->GetItemBackground().GetSelectedBackground().GetMiddlePath(),
 			m_ToolBox->GetItemBackground().GetSelectedBackground().GetRightPath()
 					);		
-	/*id = m_PropGrid->GetPropertyByLabel(wxT("Item Background"));
-	/*prop = (wxToolObjectBackgroundInfoPropertyClass *)id.GetPropertyPtr();
-	if(prop) prop->DoSetValue((void*)&bg);*/
+	prop = (wxToolObjectBackgroundInfoProperty *)m_PropGrid->GetPropertyByLabel(wxT("Item Background"));
+	bgVariant << bg;
+	if (prop) prop->SetValue(bgVariant);
+
 	colorValue = m_ToolBox->GetItemNormalColour();
 	m_PropGrid->SetPropertyValue(wxT("ItemNormalColour"), colorValue);
 	colorValue = m_ToolBox->GetItemHoverColour();
@@ -584,11 +587,11 @@ void ToolBoxTestFrame::SynchronizeProperties()
 	m_PropGrid->SetPropertyValue(wxT("ItemSelectedColour"), colorValue);
 	colorValue = m_ToolBox->GetItemTextColour();
 	m_PropGrid->SetPropertyValue(wxT("ItemTextColour"), colorValue);
-	fontValue = m_ToolBox->GetItemNormalFont();
+	fontValue << m_ToolBox->GetItemNormalFont();
 	m_PropGrid->SetPropertyValue(wxT("ItemNormalFont"), fontValue);
-	fontValue = m_ToolBox->GetItemHoverFont();
+	fontValue << m_ToolBox->GetItemHoverFont();
 	m_PropGrid->SetPropertyValue(wxT("ItemHoverFont"), fontValue);
-	fontValue = m_ToolBox->GetItemSelectedFont();
+	fontValue << m_ToolBox->GetItemSelectedFont();
 	m_PropGrid->SetPropertyValue(wxT("ItemSelectedFont"), fontValue);
 	
 	bg.SetFileNames(		
@@ -602,9 +605,10 @@ void ToolBoxTestFrame::SynchronizeProperties()
 			m_ToolBox->GetButtonBackground().GetSelectedBackground().GetMiddlePath(),
 			m_ToolBox->GetButtonBackground().GetSelectedBackground().GetRightPath()
 					);		
-	/*id = m_PropGrid->GetPropertyByLabel(wxT("Button Background"));
-	prop = (wxToolObjectBackgroundInfoPropertyClass *)id.GetPropertyPtr();
-	if(prop) prop->DoSetValue((void*)&bg);*/
+	prop = (wxToolObjectBackgroundInfoProperty *)m_PropGrid->GetPropertyByLabel(wxT("Button Background"));
+	bgVariant << bg;
+	if (prop) prop->SetValue(bgVariant);
+	
 	colorValue = m_ToolBox->GetButtonNormalColour();
 	m_PropGrid->SetPropertyValue(wxT("ButtonNormalColour"), colorValue);
 	colorValue = m_ToolBox->GetButtonHoverColour();

@@ -32,10 +32,26 @@ public:
 	wxString m_RightBitmapPath;
 };
 
-bool operator == (const wxBitmapSetInfo & a, const wxBitmapSetInfo & b);
+bool operator == (const wxBitmapSetInfo& a, const wxBitmapSetInfo& b);
 
-//WX_PG_DECLARE_VALUE_TYPE_VOIDP(wxBitmapSetInfo)
-//WX_PG_DECLARE_PROPERTY(wxBitmapSetInfoProperty,const wxBitmapSetInfo &,wxBitmapSetInfo())
+WX_PG_DECLARE_VARIANT_DATA(wxBitmapSetInfo)
+
+class wxBitmapSetInfoProperty : public wxPGProperty
+{
+	WX_PG_DECLARE_PROPERTY_CLASS(wxBitmapSetInfoProperty)
+public:
+
+	wxBitmapSetInfoProperty(const wxString& label = wxPG_LABEL,
+		const wxString& name = wxPG_LABEL,
+		const wxBitmapSetInfo& value = wxBitmapSetInfo());
+	virtual ~wxBitmapSetInfoProperty();
+
+	virtual wxVariant ChildChanged(wxVariant& thisValue, int childIndex, wxVariant& childValue) const wxOVERRIDE;
+	virtual void RefreshChildren() wxOVERRIDE;
+
+protected:
+};
+
 
 // ------------------------------------------------------------------------
 
@@ -96,25 +112,22 @@ public:
 
 bool operator == (const wxToolObjectBackgroundInfo & a, const wxToolObjectBackgroundInfo & b);
 
-//WX_PG_DECLARE_VALUE_TYPE_VOIDP(wxToolObjectBackgroundInfo)
-//WX_PG_DECLARE_PROPERTY(wxToolObjectBackgroundInfoProperty,
-//					   const wxToolObjectBackgroundInfo &,
-//					   wxToolObjectBackgroundInfo())
-//
-//class wxToolObjectBackgroundInfoPropertyClass : public wxPGPropertyWithChildren
-//{
-//    WX_PG_DECLARE_PROPERTY_CLASS()
-//public:
-//
-//    wxToolObjectBackgroundInfoPropertyClass ( const wxString& label, const wxString& name,
-//        const wxToolObjectBackgroundInfo& value );
-//    virtual ~wxToolObjectBackgroundInfoPropertyClass ();
-//
-//    WX_PG_DECLARE_PARENTAL_TYPE_METHODS()
-//    WX_PG_DECLARE_PARENTAL_METHODS()
-//
-//protected:
-//    wxToolObjectBackgroundInfo m_value;
-//};
+WX_PG_DECLARE_VARIANT_DATA(wxToolObjectBackgroundInfo)
+
+class wxToolObjectBackgroundInfoProperty : public wxPGProperty
+{
+	WX_PG_DECLARE_PROPERTY_CLASS(wxToolObjectBackgroundInfoProperty)
+public:
+
+	wxToolObjectBackgroundInfoProperty(const wxString& label = wxPG_LABEL,
+		const wxString& name = wxPG_LABEL,
+		const wxToolObjectBackgroundInfo& value = wxToolObjectBackgroundInfo());
+	virtual ~wxToolObjectBackgroundInfoProperty();
+
+	virtual wxVariant ChildChanged(wxVariant& thisValue, int childIndex, wxVariant& childValue) const wxOVERRIDE;
+	virtual void RefreshChildren() wxOVERRIDE;
+
+protected:
+};
 
 #endif
