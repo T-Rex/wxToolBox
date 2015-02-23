@@ -22,9 +22,9 @@ IMPLEMENT_APP(wxToolBoxMinimalTestApp)
 
 class wxToolBoxMinimalTestFrame : public wxFrame
 {
-	wxToolBox * m_ToolBox;
-	wxGauge * m_tab4gauge;
-	wxTimer * m_gaugetimer;
+	wxToolBox * m_ToolBox = nullptr;
+	wxGauge * m_tab4gauge = nullptr;
+	wxTimer * m_gaugetimer = nullptr;
 public:
 	wxToolBoxMinimalTestFrame();
 	~wxToolBoxMinimalTestFrame();
@@ -250,7 +250,11 @@ bool wxToolBoxMinimalTestApp::OnInit()
 	wxToolBoxMinimalTestFrame * frame = new wxToolBoxMinimalTestFrame;
 	SetTopWindow(frame);
 	frame->Centre();
+#if defined(__WXMSW__)
 	frame->ShowFullScreen(true);
+#else
+    frame->Show();
+#endif
 	wxYield();
 	frame->CreateToolBox();
 #if defined(__WXWINCE__)
