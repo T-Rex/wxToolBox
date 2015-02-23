@@ -26,10 +26,20 @@ if(WIN32)
 endif(WIN32)
 
 	
-if(LINUX)
+if(LINUX OR APPLE)
 	message("ConfigurationName" ${ConfigurationName})
 	set(PREPROCESSOR_DEFINITIONS ${PREPROCESSOR_DEFINITIONS};/DIFLOOR_EXPORTS;/DIFLOOR_EFFECT_PLUGIN_BASE_EXPORTS;/D__STDC_CONSTANT_MACROS)
-endif(LINUX)
+
+	SET(CMAKE_SKIP_BUILD_RPATH  FALSE)
+	SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+	if(LINUX) 
+		SET(CMAKE_INSTALL_RPATH ".:./../../")
+	else()
+		SET(CMAKE_INSTALL_RPATH "@executable_path/../Frameworks")
+	endif(LINUX)
+endif(LINUX OR APPLE)
+
+
 
 set(SRCS ${SRCS} ${HFILES} ${PROJECT_ROOT_DIR}/include/stdwx.h ${PROJECT_ROOT_DIR}/include/stdwx.cpp)
 
