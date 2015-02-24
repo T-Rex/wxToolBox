@@ -15,3 +15,11 @@ wxToolBox is a good choice if you want to develop professional-looking software.
 * Tabs can contain wxWidgets controls instead of items
 * Online documentation and samples
 * Visual skin editor
+
+Compilation under OS X
+----------------------
+
+The component has been tested under OS X 10.10 (Yosemite)
+You need to have a shared build of wxWidgets compiled with following flags (with support of C++11)
+
+`../configure --with-osx_cocoa --with-macosx-version-min=10.7 --with-macosx-sdk=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk CC=clang CXX=clang++ CXXFLAGS="-stdlib=libc++ -std=c++11" OBJCXXFLAGS="-stdlib=libc++ -std=c++11" LDFLAGS=-stdlib=libc++ --enable-shared --disable-static --enable-unicode --enable-debug`
